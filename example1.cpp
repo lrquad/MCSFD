@@ -66,7 +66,6 @@ int main()
     neohookeanmodel_csfd->currentdisplacement = u;
 
     int numtest = 10000;
-    double energy;
     clock_t t1 = clock();
 
     //compute energy, energy gradient, energy hessian with analytical function
@@ -76,7 +75,6 @@ int main()
     }
 
     clock_t t2 = clock();
-    std::cout << energy << std::endl;
     //std::cout << *stvkmodel->stiffness_list[0] << std::endl;
     std::cout << "no MSCFD stvk " << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << std::endl;
 
@@ -90,7 +88,6 @@ int main()
 
     t2 = clock();
 
-    std::cout << energy << std::endl;
     //std::cout << *stvkmodel_csfd->stiffness_list[0] << std::endl;
     std::cout << "MSCFD stvk " << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << std::endl;
 
@@ -104,7 +101,6 @@ int main()
 
     t2 = clock();
 
-    std::cout << energy << std::endl;
     //std::cout << *stvkmodel_csfd->stiffness_list[0] << std::endl;
     std::cout << "no image MSCFD stvk " << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << std::endl;
 
@@ -119,7 +115,6 @@ int main()
 
     t2 = clock();
 
-    std::cout << energy << std::endl;
     //std::cout << *neohookeanmodel->stiffness_list[0] << std::endl;
     std::cout << "no MSCFD neohookean " << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << std::endl;
 
@@ -134,11 +129,8 @@ int main()
 
     t2 = clock();
 
-    std::cout << energy << std::endl;
     //std::cout << *neohookeanmodel_csfd->stiffness_list[0] << std::endl;
     std::cout << "MSCFD neohookean " << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << std::endl;
-
-
     //delete tetmesh;
     //delete hyperelasticmodel_csfd;
     //delete hyperelasticmodel;
